@@ -1,5 +1,5 @@
 {
-  "fecha_utc": "2026-11-07T01:51:16.959853+00:00",
+  "fecha_utc": "2026-11-07T03:23:27.887771+00:00",
   "transporte": "Sockets TCP reales en 127.0.0.1, puertos efímeros",
   "concurrencia": "Tres procesos cliente con spawn y barrera de sincronización",
   "pruebas_ejecutadas": 13,
@@ -8,11 +8,11 @@
     {
       "prueba": "__main__.PruebasBiblioteca.test_01_consultas_simultaneas",
       "ok": true,
-      "duracion_segundos": 1.281,
+      "duracion_segundos": 0.828,
       "detalles": {
         "procesos": [
           {
-            "pid": 24392,
+            "pid": 27168,
             "tarea": "catalogo",
             "respuestas": [
               {
@@ -54,7 +54,7 @@
             ]
           },
           {
-            "pid": 27696,
+            "pid": 17740,
             "tarea": "catalogo",
             "respuestas": [
               {
@@ -96,7 +96,7 @@
             ]
           },
           {
-            "pid": 23396,
+            "pid": 28148,
             "tarea": "catalogo",
             "respuestas": [
               {
@@ -144,11 +144,36 @@
     {
       "prueba": "__main__.PruebasBiblioteca.test_02_ultimo_ejemplar",
       "ok": true,
-      "duracion_segundos": 1.219,
+      "duracion_segundos": 0.844,
       "detalles": {
         "procesos": [
           {
-            "pid": 26196,
+            "pid": 12216,
+            "tarea": "estado",
+            "respuestas": [
+              {
+                "ok": true,
+                "mensaje": "Servidor en funcionamiento.",
+                "estado": "activo",
+                "clientes_atendidos": 3,
+                "clientes_activos": 3,
+                "segundos_activo": 0.61
+              }
+            ]
+          },
+          {
+            "pid": 24816,
+            "tarea": "reserva",
+            "respuestas": [
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              }
+            ]
+          },
+          {
+            "pid": 21296,
             "tarea": "reserva",
             "respuestas": [
               {
@@ -163,31 +188,6 @@
                 "disponibles": 0
               }
             ]
-          },
-          {
-            "pid": 21252,
-            "tarea": "reserva",
-            "respuestas": [
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              }
-            ]
-          },
-          {
-            "pid": 4148,
-            "tarea": "estado",
-            "respuestas": [
-              {
-                "ok": true,
-                "mensaje": "Servidor en funcionamiento.",
-                "estado": "activo",
-                "clientes_atendidos": 3,
-                "clientes_activos": 3,
-                "segundos_activo": 0.97
-              }
-            ]
           }
         ],
         "disponibilidad_final": 0
@@ -197,7 +197,7 @@
     {
       "prueba": "__main__.PruebasBiblioteca.test_03_id_inexistente",
       "ok": true,
-      "duracion_segundos": 0.218,
+      "duracion_segundos": 0.203,
       "detalles": {
         "respuestas": [
           {
@@ -217,7 +217,7 @@
     {
       "prueba": "__main__.PruebasBiblioteca.test_04_desconexion_antes_de_leer",
       "ok": true,
-      "duracion_segundos": 0.204,
+      "duracion_segundos": 0.219,
       "detalles": {
         "reserva_sin_leer": {
           "ok": true,
@@ -243,7 +243,7 @@
     {
       "prueba": "__main__.PruebasBiblioteca.test_05_operacion_desconocida",
       "ok": true,
-      "duracion_segundos": 0.218,
+      "duracion_segundos": 0.219,
       "detalles": {
         "respuesta": {
           "ok": false,
@@ -256,11 +256,123 @@
     {
       "prueba": "__main__.PruebasBiblioteca.test_06_reservas_repetidas_no_negativas",
       "ok": true,
-      "duracion_segundos": 1.157,
+      "duracion_segundos": 0.812,
       "detalles": {
         "procesos": [
           {
-            "pid": 9484,
+            "pid": 26964,
+            "tarea": "muchas_reservas",
+            "respuestas": [
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              }
+            ]
+          },
+          {
+            "pid": 9848,
+            "tarea": "muchas_reservas",
+            "respuestas": [
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              }
+            ]
+          },
+          {
+            "pid": 14488,
             "tarea": "muchas_reservas",
             "respuestas": [
               {
@@ -273,118 +385,6 @@
                   "disponibles": 0
                 },
                 "disponibles": 0
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              }
-            ]
-          },
-          {
-            "pid": 16088,
-            "tarea": "muchas_reservas",
-            "respuestas": [
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              },
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
-              }
-            ]
-          },
-          {
-            "pid": 4984,
-            "tarea": "muchas_reservas",
-            "respuestas": [
-              {
-                "ok": false,
-                "codigo": "SIN_EJEMPLARES",
-                "mensaje": "No quedan ejemplares disponibles."
               },
               {
                 "ok": false,
@@ -475,7 +475,7 @@
     {
       "prueba": "__main__.PruebasBiblioteca.test_07_parametros_invalidos",
       "ok": true,
-      "duracion_segundos": 0.218,
+      "duracion_segundos": 0.203,
       "detalles": {
         "solicitudes_rechazadas": 10
       },
@@ -484,7 +484,7 @@
     {
       "prueba": "__main__.PruebasBiblioteca.test_08_tramas_invalidas",
       "ok": true,
-      "duracion_segundos": 0.203,
+      "duracion_segundos": 0.219,
       "detalles": {
         "tramas_rechazadas": 6
       },
@@ -493,7 +493,7 @@
     {
       "prueba": "__main__.PruebasBiblioteca.test_09_fragmentacion_y_agrupacion_tcp",
       "ok": true,
-      "duracion_segundos": 0.219,
+      "duracion_segundos": 0.203,
       "detalles": {
         "respuestas_recibidas_en_orden": 2
       },
@@ -502,7 +502,7 @@
     {
       "prueba": "__main__.PruebasBiblioteca.test_10_servidor_apagado",
       "ok": true,
-      "duracion_segundos": 0.313,
+      "duracion_segundos": 11.516,
       "detalles": {
         "resultado": "RPC interrumpida y conexión nueva rechazada"
       },
@@ -529,7 +529,7 @@
     {
       "prueba": "__main__.PruebasBiblioteca.test_13_menu_interactivo",
       "ok": true,
-      "duracion_segundos": 0.563,
+      "duracion_segundos": 0.406,
       "detalles": {
         "codigo_salida": 0,
         "salida": "\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: Ingrese una opción del 1 al 5.\n\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: Catálogo consultado.\nID 1 | Sistemas distribuidos | Andrew S. Tanenbaum | Disponibles: 2\nID 2 | Redes de computadoras | Andrew S. Tanenbaum | Disponibles: 3\nID 3 | El tutorial de Python | Guido van Rossum | Disponibles: 1\nID 4 | Sistemas operativos modernos | Andrew S. Tanenbaum | Disponibles: 2\nID 5 | Introducción a los algoritmos | Thomas H. Cormen | Disponibles: 4\n\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: ID del libro: El ID debe ser un entero positivo.\n\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: ID del libro: Error [LIBRO_NO_ENCONTRADO]: No existe un libro con ese id.\n\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: ID del libro: Reserva realizada correctamente.\nID 3 | El tutorial de Python | Guido van Rossum | Disponibles: 0\n\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: ID del libro: Error [SIN_EJEMPLARES]: No quedan ejemplares disponibles.\n\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: Servidor en funcionamiento.\nEstado: activo | Conexiones atendidas: 1 | Clientes activos: 1\n\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: ",

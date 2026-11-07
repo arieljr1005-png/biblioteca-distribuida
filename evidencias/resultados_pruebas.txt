@@ -19,6 +19,6 @@ test_13_menu_interactivo (__main__.PruebasBiblioteca.test_13_menu_interactivo)
 Ejecuta cliente.py como proceso y recorre el menú con entradas reales. ... ok
 
 ----------------------------------------------------------------------
-Ran 13 tests in 6.422s
+Ran 13 tests in 16.288s
 
 OK
