@@ -1,0 +1,541 @@
+{
+  "fecha_utc": "2026-11-07T01:51:16.959853+00:00",
+  "transporte": "Sockets TCP reales en 127.0.0.1, puertos efímeros",
+  "concurrencia": "Tres procesos cliente con spawn y barrera de sincronización",
+  "pruebas_ejecutadas": 13,
+  "exitoso": true,
+  "resultados": [
+    {
+      "prueba": "__main__.PruebasBiblioteca.test_01_consultas_simultaneas",
+      "ok": true,
+      "duracion_segundos": 1.281,
+      "detalles": {
+        "procesos": [
+          {
+            "pid": 24392,
+            "tarea": "catalogo",
+            "respuestas": [
+              {
+                "ok": true,
+                "mensaje": "Catálogo consultado.",
+                "libros": [
+                  {
+                    "id": 1,
+                    "titulo": "Sistemas distribuidos",
+                    "autor": "Andrew S. Tanenbaum",
+                    "disponibles": 2
+                  },
+                  {
+                    "id": 2,
+                    "titulo": "Redes de computadoras",
+                    "autor": "Andrew S. Tanenbaum",
+                    "disponibles": 3
+                  },
+                  {
+                    "id": 3,
+                    "titulo": "El tutorial de Python",
+                    "autor": "Guido van Rossum",
+                    "disponibles": 1
+                  },
+                  {
+                    "id": 4,
+                    "titulo": "Sistemas operativos modernos",
+                    "autor": "Andrew S. Tanenbaum",
+                    "disponibles": 2
+                  },
+                  {
+                    "id": 5,
+                    "titulo": "Introducción a los algoritmos",
+                    "autor": "Thomas H. Cormen",
+                    "disponibles": 4
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pid": 27696,
+            "tarea": "catalogo",
+            "respuestas": [
+              {
+                "ok": true,
+                "mensaje": "Catálogo consultado.",
+                "libros": [
+                  {
+                    "id": 1,
+                    "titulo": "Sistemas distribuidos",
+                    "autor": "Andrew S. Tanenbaum",
+                    "disponibles": 2
+                  },
+                  {
+                    "id": 2,
+                    "titulo": "Redes de computadoras",
+                    "autor": "Andrew S. Tanenbaum",
+                    "disponibles": 3
+                  },
+                  {
+                    "id": 3,
+                    "titulo": "El tutorial de Python",
+                    "autor": "Guido van Rossum",
+                    "disponibles": 1
+                  },
+                  {
+                    "id": 4,
+                    "titulo": "Sistemas operativos modernos",
+                    "autor": "Andrew S. Tanenbaum",
+                    "disponibles": 2
+                  },
+                  {
+                    "id": 5,
+                    "titulo": "Introducción a los algoritmos",
+                    "autor": "Thomas H. Cormen",
+                    "disponibles": 4
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pid": 23396,
+            "tarea": "catalogo",
+            "respuestas": [
+              {
+                "ok": true,
+                "mensaje": "Catálogo consultado.",
+                "libros": [
+                  {
+                    "id": 1,
+                    "titulo": "Sistemas distribuidos",
+                    "autor": "Andrew S. Tanenbaum",
+                    "disponibles": 2
+                  },
+                  {
+                    "id": 2,
+                    "titulo": "Redes de computadoras",
+                    "autor": "Andrew S. Tanenbaum",
+                    "disponibles": 3
+                  },
+                  {
+                    "id": 3,
+                    "titulo": "El tutorial de Python",
+                    "autor": "Guido van Rossum",
+                    "disponibles": 1
+                  },
+                  {
+                    "id": 4,
+                    "titulo": "Sistemas operativos modernos",
+                    "autor": "Andrew S. Tanenbaum",
+                    "disponibles": 2
+                  },
+                  {
+                    "id": 5,
+                    "titulo": "Introducción a los algoritmos",
+                    "autor": "Thomas H. Cormen",
+                    "disponibles": 4
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "errores": []
+    },
+    {
+      "prueba": "__main__.PruebasBiblioteca.test_02_ultimo_ejemplar",
+      "ok": true,
+      "duracion_segundos": 1.219,
+      "detalles": {
+        "procesos": [
+          {
+            "pid": 26196,
+            "tarea": "reserva",
+            "respuestas": [
+              {
+                "ok": true,
+                "mensaje": "Reserva realizada correctamente.",
+                "libro": {
+                  "id": 3,
+                  "titulo": "El tutorial de Python",
+                  "autor": "Guido van Rossum",
+                  "disponibles": 0
+                },
+                "disponibles": 0
+              }
+            ]
+          },
+          {
+            "pid": 21252,
+            "tarea": "reserva",
+            "respuestas": [
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              }
+            ]
+          },
+          {
+            "pid": 4148,
+            "tarea": "estado",
+            "respuestas": [
+              {
+                "ok": true,
+                "mensaje": "Servidor en funcionamiento.",
+                "estado": "activo",
+                "clientes_atendidos": 3,
+                "clientes_activos": 3,
+                "segundos_activo": 0.97
+              }
+            ]
+          }
+        ],
+        "disponibilidad_final": 0
+      },
+      "errores": []
+    },
+    {
+      "prueba": "__main__.PruebasBiblioteca.test_03_id_inexistente",
+      "ok": true,
+      "duracion_segundos": 0.218,
+      "detalles": {
+        "respuestas": [
+          {
+            "ok": false,
+            "codigo": "LIBRO_NO_ENCONTRADO",
+            "mensaje": "No existe un libro con ese id."
+          },
+          {
+            "ok": false,
+            "codigo": "LIBRO_NO_ENCONTRADO",
+            "mensaje": "No existe un libro con ese id."
+          }
+        ]
+      },
+      "errores": []
+    },
+    {
+      "prueba": "__main__.PruebasBiblioteca.test_04_desconexion_antes_de_leer",
+      "ok": true,
+      "duracion_segundos": 0.204,
+      "detalles": {
+        "reserva_sin_leer": {
+          "ok": true,
+          "mensaje": "Libro consultado.",
+          "libro": {
+            "id": 3,
+            "titulo": "El tutorial de Python",
+            "autor": "Guido van Rossum",
+            "disponibles": 0
+          }
+        },
+        "estado_posterior": {
+          "ok": true,
+          "mensaje": "Servidor en funcionamiento.",
+          "estado": "activo",
+          "clientes_atendidos": 2,
+          "clientes_activos": 1,
+          "segundos_activo": 0.0
+        }
+      },
+      "errores": []
+    },
+    {
+      "prueba": "__main__.PruebasBiblioteca.test_05_operacion_desconocida",
+      "ok": true,
+      "duracion_segundos": 0.218,
+      "detalles": {
+        "respuesta": {
+          "ok": false,
+          "codigo": "OPERACION_DESCONOCIDA",
+          "mensaje": "La operación solicitada no existe."
+        }
+      },
+      "errores": []
+    },
+    {
+      "prueba": "__main__.PruebasBiblioteca.test_06_reservas_repetidas_no_negativas",
+      "ok": true,
+      "duracion_segundos": 1.157,
+      "detalles": {
+        "procesos": [
+          {
+            "pid": 9484,
+            "tarea": "muchas_reservas",
+            "respuestas": [
+              {
+                "ok": true,
+                "mensaje": "Reserva realizada correctamente.",
+                "libro": {
+                  "id": 3,
+                  "titulo": "El tutorial de Python",
+                  "autor": "Guido van Rossum",
+                  "disponibles": 0
+                },
+                "disponibles": 0
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              }
+            ]
+          },
+          {
+            "pid": 16088,
+            "tarea": "muchas_reservas",
+            "respuestas": [
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              }
+            ]
+          },
+          {
+            "pid": 4984,
+            "tarea": "muchas_reservas",
+            "respuestas": [
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              },
+              {
+                "ok": false,
+                "codigo": "SIN_EJEMPLARES",
+                "mensaje": "No quedan ejemplares disponibles."
+              }
+            ]
+          }
+        ],
+        "intentos": 30,
+        "exitos": 1,
+        "sin_ejemplares": 29,
+        "catalogo_final": [
+          {
+            "id": 1,
+            "titulo": "Sistemas distribuidos",
+            "autor": "Andrew S. Tanenbaum",
+            "disponibles": 2
+          },
+          {
+            "id": 2,
+            "titulo": "Redes de computadoras",
+            "autor": "Andrew S. Tanenbaum",
+            "disponibles": 3
+          },
+          {
+            "id": 3,
+            "titulo": "El tutorial de Python",
+            "autor": "Guido van Rossum",
+            "disponibles": 0
+          },
+          {
+            "id": 4,
+            "titulo": "Sistemas operativos modernos",
+            "autor": "Andrew S. Tanenbaum",
+            "disponibles": 2
+          },
+          {
+            "id": 5,
+            "titulo": "Introducción a los algoritmos",
+            "autor": "Thomas H. Cormen",
+            "disponibles": 4
+          }
+        ]
+      },
+      "errores": []
+    },
+    {
+      "prueba": "__main__.PruebasBiblioteca.test_07_parametros_invalidos",
+      "ok": true,
+      "duracion_segundos": 0.218,
+      "detalles": {
+        "solicitudes_rechazadas": 10
+      },
+      "errores": []
+    },
+    {
+      "prueba": "__main__.PruebasBiblioteca.test_08_tramas_invalidas",
+      "ok": true,
+      "duracion_segundos": 0.203,
+      "detalles": {
+        "tramas_rechazadas": 6
+      },
+      "errores": []
+    },
+    {
+      "prueba": "__main__.PruebasBiblioteca.test_09_fragmentacion_y_agrupacion_tcp",
+      "ok": true,
+      "duracion_segundos": 0.219,
+      "detalles": {
+        "respuestas_recibidas_en_orden": 2
+      },
+      "errores": []
+    },
+    {
+      "prueba": "__main__.PruebasBiblioteca.test_10_servidor_apagado",
+      "ok": true,
+      "duracion_segundos": 0.313,
+      "detalles": {
+        "resultado": "RPC interrumpida y conexión nueva rechazada"
+      },
+      "errores": []
+    },
+    {
+      "prueba": "__main__.PruebasBiblioteca.test_11_cliente_rechaza_respuestas_invalidas",
+      "ok": true,
+      "duracion_segundos": 0.203,
+      "detalles": {
+        "respuestas_invalidas_rechazadas": 5
+      },
+      "errores": []
+    },
+    {
+      "prueba": "__main__.PruebasBiblioteca.test_12_timeout_cliente",
+      "ok": true,
+      "duracion_segundos": 0.406,
+      "detalles": {
+        "resultado": "El cliente detectó el timeout sin reintentar"
+      },
+      "errores": []
+    },
+    {
+      "prueba": "__main__.PruebasBiblioteca.test_13_menu_interactivo",
+      "ok": true,
+      "duracion_segundos": 0.563,
+      "detalles": {
+        "codigo_salida": 0,
+        "salida": "\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: Ingrese una opción del 1 al 5.\n\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: Catálogo consultado.\nID 1 | Sistemas distribuidos | Andrew S. Tanenbaum | Disponibles: 2\nID 2 | Redes de computadoras | Andrew S. Tanenbaum | Disponibles: 3\nID 3 | El tutorial de Python | Guido van Rossum | Disponibles: 1\nID 4 | Sistemas operativos modernos | Andrew S. Tanenbaum | Disponibles: 2\nID 5 | Introducción a los algoritmos | Thomas H. Cormen | Disponibles: 4\n\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: ID del libro: El ID debe ser un entero positivo.\n\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: ID del libro: Error [LIBRO_NO_ENCONTRADO]: No existe un libro con ese id.\n\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: ID del libro: Reserva realizada correctamente.\nID 3 | El tutorial de Python | Guido van Rossum | Disponibles: 0\n\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: ID del libro: Error [SIN_EJEMPLARES]: No quedan ejemplares disponibles.\n\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: Servidor en funcionamiento.\nEstado: activo | Conexiones atendidas: 1 | Clientes activos: 1\n\nSISTEMA DE BIBLIOTECA UNIVERSITARIA\n1. Consultar todos los libros\n2. Consultar libro por ID\n3. Reservar un libro\n4. Consultar estado del servidor\n5. Salir\nSeleccione una opción: ",
+        "errores": ""
+      },
+      "errores": []
+    }
+  ]
+}

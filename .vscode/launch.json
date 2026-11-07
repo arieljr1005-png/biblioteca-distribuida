@@ -1,0 +1,8 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {"name": "Biblioteca: servidor", "type": "debugpy", "request": "launch", "program": "${workspaceFolder}/servidor.py", "console": "integratedTerminal"},
+    {"name": "Biblioteca: cliente", "type": "debugpy", "request": "launch", "program": "${workspaceFolder}/cliente.py", "console": "integratedTerminal"},
+    {"name": "Biblioteca: pruebas", "type": "debugpy", "request": "launch", "program": "${workspaceFolder}/pruebas.py", "console": "integratedTerminal"}
+  ]
+}

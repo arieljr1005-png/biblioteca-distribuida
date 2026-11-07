@@ -1,0 +1,24 @@
+test_01_consultas_simultaneas (__main__.PruebasBiblioteca.test_01_consultas_simultaneas)
+Caso 1: tres procesos consultan simultáneamente el catálogo. ... ok
+test_02_ultimo_ejemplar (__main__.PruebasBiblioteca.test_02_ultimo_ejemplar)
+Caso 2: dos reservan el último ejemplar y un tercer proceso consulta estado. ... ok
+test_03_id_inexistente (__main__.PruebasBiblioteca.test_03_id_inexistente)
+Caso 3: consultar y reservar un ID inexistente. ... ok
+test_04_desconexion_antes_de_leer (__main__.PruebasBiblioteca.test_04_desconexion_antes_de_leer)
+Caso 4: envía reserva y cierra sin leer; el servicio sigue disponible. ... ok
+test_05_operacion_desconocida (__main__.PruebasBiblioteca.test_05_operacion_desconocida)
+Caso 5: operación no registrada y siguiente RPC en la misma conexión. ... ok
+test_06_reservas_repetidas_no_negativas (__main__.PruebasBiblioteca.test_06_reservas_repetidas_no_negativas) ... ok
+test_07_parametros_invalidos (__main__.PruebasBiblioteca.test_07_parametros_invalidos) ... ok
+test_08_tramas_invalidas (__main__.PruebasBiblioteca.test_08_tramas_invalidas) ... ok
+test_09_fragmentacion_y_agrupacion_tcp (__main__.PruebasBiblioteca.test_09_fragmentacion_y_agrupacion_tcp) ... ok
+test_10_servidor_apagado (__main__.PruebasBiblioteca.test_10_servidor_apagado) ... ok
+test_11_cliente_rechaza_respuestas_invalidas (__main__.PruebasBiblioteca.test_11_cliente_rechaza_respuestas_invalidas) ... ok
+test_12_timeout_cliente (__main__.PruebasBiblioteca.test_12_timeout_cliente) ... ok
+test_13_menu_interactivo (__main__.PruebasBiblioteca.test_13_menu_interactivo)
+Ejecuta cliente.py como proceso y recorre el menú con entradas reales. ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 6.422s
+
+OK
